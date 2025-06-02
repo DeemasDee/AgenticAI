@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Task Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Chat with Daily Task Assistant</h1>
+    <div id="chatlog"></div>
+    <textarea id="input" rows="3" cols="60"></textarea><br>
+    <button onclick="send()">Send</button>
+
+    <script>
+        async function send() {
+            const input = document.getElementById("input").value;
+            const res = await fetch("/chat", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({user_input: input})
+            });
+            const data = await res.json();
+            const chatlog = document.getElementById("chatlog");
+            chatlog.innerHTML += `<p><b>You:</b> ${input}</p>`;
+            chatlog.innerHTML += `<p><b>Bot:</b> ${data.reply}</p>`;
+            document.getElementById("input").value = "";
+        }
+    </script>
+</body>
+</html>
