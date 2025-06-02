@@ -1,6 +1,6 @@
 fastapi[all]
 uvicorn
-request
+requests
 openai
 openai-agents
 jinja2
