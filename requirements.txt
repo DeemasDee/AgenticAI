@@ -1,5 +1,6 @@
 fastapi
 uvicorn
 request
-openai
+openai==0.28
+openai-agents
 jinja2
