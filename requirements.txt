@@ -4,3 +4,4 @@ requests
 openai
 openai-agents
 jinja2
+streamlit
