@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+request
+openai
+jinja2
